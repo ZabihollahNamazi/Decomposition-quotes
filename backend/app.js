@@ -53,6 +53,10 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.error(`Quote server listening on port ${port}`);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Quote server listening on port ${port}`);
 });
+
+// app.listen(port, () => {
+//   console.error(`Quote server listening on port ${port}`);
+// });
