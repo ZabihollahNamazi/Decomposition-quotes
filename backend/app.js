@@ -3,8 +3,10 @@ import cors from "cors";
 
 
 const app = express();
-
-app.use(cors());
+app.use(cors({
+  origin: "https://zabihollahnamazi-decomposition-quotes-frontend.hosting.codeyourfuture.io"
+}));
+// app.use(cors());
 const port = process.env.PORT || 3000;
 
 const quotes = [
