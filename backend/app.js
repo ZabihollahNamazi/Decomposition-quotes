@@ -1,12 +1,11 @@
 import express from "express";
 import cors from "cors";
 
-
 const app = express();
 app.use(cors({
-  origin: "https://zabihollahnamazi-decomposition-quotes-frontend.hosting.codeyourfuture.io"
+  origin: "*"
 }));
-// app.use(cors());
+
 const port = process.env.PORT || 3000;
 
 const quotes = [
@@ -27,7 +26,7 @@ function randomQuote() {
 
 app.get("/", (req, res) => {
   const quote = randomQuote();
-  res.send(`"${quote.quote}" -${quote.author}`);
+  res.json(quote);
 });
 
 app.post("/", (req, res) => {
@@ -60,6 +59,3 @@ app.listen(port, "0.0.0.0", () => {
   console.log(`Quote server listening on port ${port}`);
 });
 
-// app.listen(port, () => {
-//   console.error(`Quote server listening on port ${port}`);
-// });
